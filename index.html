@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css" />
+<script type="module" src="https://pyscript.net/releases/2024.3.1/core.js"></script>
+<title>Food Order System</title>
+<style>
+body {
+  background-color: #fef9f3;
+  color: #2b3a42;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  background-color: #e6b84b;
+  box-shadow: 0 3px 6px rgba(230, 184, 75, 0.4);
+  color: #4e342e;
+  font-weight: 700;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.menu-box, .info-box {
+  background-color: #fff8e1;
+  border: 1px solid #e6b84b;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(230, 184, 75, 0.25);
+  margin: 0 auto 30px;
+  max-width: 360px;
+  padding: 25px 30px;
+  text-align: left;
+}
+
+.menu-box h3, .info-box h3 {
+  color: #d89718;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.menu-item {
+  color: #6d4c41;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.menu-item input[type="checkbox"] {
+  cursor: pointer;
+  margin-right: 12px;
+  transform: scale(1.1);
+  vertical-align: middle;
+}
+
+.info-input {
+  border: 1px solid #e6b84b;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #4e342e;
+  font-family: inherit;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  font-size: 1em;
+}
+
+.order-btn {
+  background-color: #d89718;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(216, 151, 24, 0.4);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 20px;
+  padding: 14px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-size: 1.1em;
+}
+
+.order-btn:hover {
+  background-color: #b37a12;
+}
+
+#order_output1, #order_output2, #order_output3, #show {
+  color: #4e342e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  margin: 8px 0;
+  text-align: center;
+  font-size: 1.1em;
+}
+</style>
+</head>
+<body>
+<h1 class="header">Hawaiian Food</h1>
+
+<div class="menu-box">
+  <h3>Menu</h3>
+    <div class="menu-item"><input type="checkbox" id="item1" value="12.50"> Poke Bowl - $12.50</div>
+    <div class="menu-item"><input type="checkbox" id="item2" value="10.00"> Kalua Pork - $10.00</div>
+    <div class="menu-item"><input type="checkbox" id="item3" value="8.00"> Lomi Salmon - $8.00</div>
+    <div class="menu-item"><input type="checkbox" id="item4" value="11.00"> Haupia Pie - $11.00</div>
+    <div class="menu-item"><input type="checkbox" id="item5" value="6.50"> Spam Musubi - $6.50</div>
+    <div class="menu-item"><input type="checkbox" id="item6" value="14.00"> Huli Huli Chicken - $14.00</div>
+    <div class="menu-item"><input type="checkbox" id="item7" value="9.00"> Shave Ice - $9.00</div>
+    <div class="menu-item"><input type="checkbox" id="item8" value="7.00"> Haupia Coconut Dessert - $7.00</div>
+</div>
+
+<div class="info-box">
+  <h3>Customer Info</h3>
+    <input type="text" class="info-input" id="customer" placeholder="Customer Name"><br>
+    <input type="text" class="info-input" id="address" placeholder="Address"><br>
+    <input type="text" class="info-input" id="contact_number" placeholder="Contact Number"><br>
+    <button type="submit" class="order-btn" py-click="create_order" onclick="order()">Order Now</button><br><br>
+</div>
+
+<div id="order_output1"></div>
+<div id="order_output2"></div>
+<div id="order_output3"></div>
+<div id="show"></div>
+
+<script type="py" src="main.py"></script>
+</body>
+</html>
